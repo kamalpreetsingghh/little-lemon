@@ -1,6 +1,5 @@
 package com.cleverlycode.littlelemon.screens
 
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -72,22 +71,13 @@ fun Home(navController: NavController) {
         if(selectedCategory.value.lowercase() === "all") {
             databaseMenuItems.filter { it.title.contains(searchPhrase.value, ignoreCase = true) }
         } else {
-            databaseMenuItems.filter { it.title.contains(searchPhrase.value, ignoreCase = true) && it.category.lowercase() === selectedCategory.value.lowercase() }
+            databaseMenuItems.filter { it.title.contains(searchPhrase.value, ignoreCase = true) && it.category.lowercase() == selectedCategory.value.lowercase() }
         }
     } else {
         if(selectedCategory.value.lowercase() === "all") {
             databaseMenuItems
         } else {
-            Log.d("SelectedCategory", selectedCategory.value.lowercase())
-            Log.d("DatabaseMenu", databaseMenuItems.toString())
-
-
-            Log.d("MenuList",
-                databaseMenuItems.filter { it.category.lowercase() === selectedCategory.value.lowercase() }.toString()
-            )
-
-            Log.d("MenuListSize","${databaseMenuItems.filter { it.category.lowercase() === selectedCategory.value.lowercase() }.size}")
-            databaseMenuItems.filter { it.category.lowercase() === selectedCategory.value.lowercase() }
+            databaseMenuItems.filter { it.category.lowercase() == selectedCategory.value.lowercase() }
         }
     }
 

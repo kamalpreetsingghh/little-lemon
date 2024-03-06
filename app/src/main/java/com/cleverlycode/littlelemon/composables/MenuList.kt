@@ -37,7 +37,7 @@ fun MenuItemsList(items: List<MenuItemRoom>) {
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Column {
-                        Divider(color = Color.Gray, modifier = Modifier.padding(vertical = 6.dp))
+                        Divider(color = Color.LightGray, modifier = Modifier.padding(vertical = 6.dp))
                         Row {
                             Column(modifier = Modifier.fillMaxWidth(0.7f)) {
                                 Text(
